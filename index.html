@@ -2,27 +2,36 @@
 <html>
     <head>
         <title>Find Your Hat | Derek Lin</title>
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <script src="main.js"></script>
     </head>
     <body>
-        <header>
-            <h1>Find your hat game!</h1>
-        </header>
-        <main>
-            <form>
-                <label for="height">Height: </label>
-                <input type="number" name="height" id="height">
-                <label for="width">Width: </label>
-                <input type="number" name="width" id="width"><br>
-                <script>
-                    function updateTextInput(val){
-                        document.getElementById('percValue').innerHTML = val + "%";
-                    }
-                </script>
-                <label for="percentage">Percentage of holes: </label>
-                <input type="range" name="percentage" id="percentage" min="0" max="100" value="0" onchange="updateTextInput(this.value)">
-                <span id="percValue">0%</span>
-                
-            </form>
-        </main>
+        <div class="wrapper">
+            <header>
+                <h1>Find your hat game!</h1>
+            </header>
+            <main>
+                <div class="form-area">
+                    <form>
+                        
+                        <label for="height">Height: </label>
+                        <input type="number" name="height" id="height">
+                        <label for="width">Width: </label>
+                        <input type="number" name="width" id="width"><br>
+                        <label for="percentage">Percentage of holes: </label>
+                        <input type="range" name="percentage" id="percentage" min="0" max="100" value="0" step="5" onchange="updateTextInput(this.value)">
+                        <span id="percValue">0%</span> <br>
+                    </form>
+                    <button id="start">Start</button>
+                    <button id="reset">Reset</button>
+                </div>
+                <div class="game-area">
+
+                </div>
+            </main>
+            <footer>
+
+            </footer>
+        </div>
     </body>
 </html>

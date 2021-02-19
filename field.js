@@ -46,5 +46,6 @@ class Field {
   }
 }
 
-const field = new Field(Field.generateField(10, 15, .3));
-field.print();
+/* web app side */
+
+
