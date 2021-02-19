@@ -62,11 +62,12 @@ form {
 }
 
 button {
-    
     height: 100%;
     width: 100%;
-    
+    background-color: #444;
+    color: limegreen;
 }
+
 
 #size-div {
     grid-row: 1 / span 1;
@@ -122,11 +123,14 @@ button {
     grid-column: 1/ span 1;
     font-family: monospace;
     height: 100%;
-    width: 100%;
+    padding-top: 10px;
+    padding-right: 20px;
+    text-align: right;
 }
 
 /* Footer */
 footer {
     grid-row: 5 / span 1;
     grid-column: 2 / span 1;
+    font-family: monospace;
 }
