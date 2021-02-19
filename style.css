@@ -112,7 +112,7 @@ button {
 
 .cell {
     display: absolute;
-    background-color: limegreen;
+    background-color: rgba(4, 224, 114, 0.877);
     border: 1px solid black;
     margin: 0;
     padding: 0;

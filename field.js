@@ -73,11 +73,11 @@ class Field {
           cell.style.backgroundColor = '#222222';
         }
         else if(this.field[x][y] === 'H'){
-          cell.style.backgroundColor = 'yellow'
+          cell.style.backgroundColor = 'goldenrod'
           this.goal = [x, y];
         }
         else if(this.field[x][y] === 'P'){
-          cell.style.backgroundColor = 'red';
+          cell.style.backgroundColor = 'crimson';
           this.start = [x, y];
           this.position = this.start;
         } 
@@ -111,7 +111,7 @@ class Field {
     
     let cell = document.getElementById('cell' + this.position[0] + ',' + this.position[1]);
     let previousCell = document.getElementById('cell' + previous[0] + ',' + previous[1]);
-    previousCell.style.backgroundColor = 'Tomato'
+    previousCell.style.backgroundColor = 'lightSalmon'
     if(this.field[this.position[0]][this.position[1]] === 'O'){
       //lose
       cell.style.backgroundColor = "DarkRed";
@@ -123,15 +123,15 @@ class Field {
     }
     else if(this.field[this.position[0]][this.position[1]] === 'H'){
       //win
-      cell.style.backgroundColor = "DarkOrange";
+      cell.style.backgroundColor = "darkgoldenrod";
       let text = document.getElementById('h1-text');
       let header = document.getElementById('header');
       text.innerHTML = 'You found your hat!';
-      header.style.backgroundColor = 'DarkOrange';
+      header.style.backgroundColor = 'goldenrod';
       document.querySelector('body').removeEventListener('keydown', keyPressed);
     }
     else{
-      cell.style.backgroundColor = 'red';
+      cell.style.backgroundColor = 'crimson';
     }
   }
 
@@ -211,10 +211,10 @@ function getFormData(){
 
   board.createBoard();
   document.getElementById('debug').innerHTML = "";
-  logger('size', board.side);
-  logger('start', board.start);
-  logger('position', board.position);
-  logger('goal', board.goal);
+  //logger('size', board.side);
+  //logger('start', board.start);
+  //logger('position', board.position);
+  //logger('goal', board.goal);
 
   /* controls */
   document.querySelector('body').addEventListener('keydown', keyPressed);
@@ -232,7 +232,7 @@ function keyPressed(e){
     direction = 'left';
     
   //keyPressed(direction);
-  changeLogger('position_log', board.position);
+  //changeLogger('position_log', board.position);
   board.movePlayer(direction);
 }
 
@@ -254,10 +254,10 @@ function reset(){
   header.style.backgroundColor = 'limegreen';
 
   /* debug */
-  logger('size', board.side);
-  logger('start', board.start);
-  logger('position', board.position);
-  logger('goal', board.goal);
+  //logger('size', board.side);
+  //logger('start', board.start);
+  //logger('position', board.position);
+  //logger('goal', board.goal);
 }
 
 /* logger */
