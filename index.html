@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Find Your Hat | Derek Lin</title>
+    </head>
+    <body>
+        <header>
+            <h1>Find your hat game!</h1>
+        </header>
+        <main>
+            <form>
+                <label for="height">Height: </label>
+                <input type="number" name="height" id="height">
+                <label for="width">Width: </label>
+                <input type="number" name="width" id="width"><br>
+                <script>
+                    function updateTextInput(val){
+                        document.getElementById('percValue').innerHTML = val + "%";
+                    }
+                </script>
+                <label for="percentage">Percentage of holes: </label>
+                <input type="range" name="percentage" id="percentage" min="0" max="100" value="0" onchange="updateTextInput(this.value)">
+                <span id="percValue">0%</span>
+                
+            </form>
+        </main>
+    </body>
+</html>
