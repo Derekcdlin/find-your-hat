@@ -2,36 +2,52 @@
 <html>
     <head>
         <title>Find Your Hat | Derek Lin</title>
-        <link href="style.css" type="text/css" rel="stylesheet">
-        <script src="main.js"></script>
+        <link href="./style.css" type="text/css" rel="stylesheet">
+        <script src="./web-app.js" type='text/javascript' defer></script>
+        <script src="./field.js" type='text/javascript' defer></script>
     </head>
     <body>
         <div class="wrapper">
             <header>
                 <h1>Find your hat game!</h1>
             </header>
-            <main>
-                <div class="form-area">
-                    <form>
-                        
-                        <label for="height">Height: </label>
-                        <input type="number" name="height" id="height">
-                        <label for="width">Width: </label>
-                        <input type="number" name="width" id="width"><br>
+            <div class="form-area">
+                <form>
+                    <div id="size-div">
+                        <label for="height">Size: </label>
+                        <input type="range" name="size" id="size" min="5" max="50" value="20" step="5" onchange="updateSizeInput(this.value)">
+                        <span id="sizeValue">20 by 20</span> <br>
+                    </div>
+                    <div id="percentage-div">
                         <label for="percentage">Percentage of holes: </label>
-                        <input type="range" name="percentage" id="percentage" min="0" max="100" value="0" step="5" onchange="updateTextInput(this.value)">
-                        <span id="percValue">0%</span> <br>
-                    </form>
+                        <input type="range" name="percentage" id="percentage" min="0" max="50" value="20" step="10" onchange="updatePercInput(this.value)">
+                        <span id="percValue">Medium</span> <br>
+                    </div>
+                </form>
+                <div id="start-div">
                     <button id="start">Start</button>
+                </div>
+                <div id="reset-div">
                     <button id="reset">Reset</button>
                 </div>
-                <div class="game-area">
+                
+            </div>
+            <div class="game-area">
+                <div id="board">
 
                 </div>
-            </main>
+            </div>
             <footer>
+                <p id="print-data">
 
+                </p>
             </footer>
+            <div id="debug">
+                <span id="print-out">
+
+                </span>
+            </div>
         </div>
+        <script src="web-app.js" type="module"></script>
     </body>
 </html>

@@ -5,6 +5,7 @@
 html {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -15,38 +16,117 @@ body {
 }
 
 .wrapper {
-    margin: 0 200px;
     height: 100%;
     display: grid;
-    grid-template-rows: minmax(auto, 100px) 2fr 1fr 20fr minmax(auto,100px);
+    grid-template-rows: minmax(auto, 50px) 1fr 2fr 600px minmax(auto,100px);
+    grid-template-columns: 1fr 650px 1fr;
+    grid-row-gap: 10px;
 }
 
 /* Header */
 header{
-    grid-row: 2 / 3;
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
     height: 100%;
     margin: 0 auto;
-    border: 5px solid teal
+    border: 5px solid black;
+    background-color: limegreen;
+    text-shadow: 1px 1px black;
+
 }
 
 h1 {
     padding: 5px 20px;
 }
 
-/* Main */
-main{
-    grid-row: 4 / span 1;
-}
-
 /* Form */
 .form-area {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+form {
+    display: grid;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+}
+
+#start-div, #reset-div {
+    margin: 5px 5px;
+}
+
+button {
     
+    height: 100%;
+    width: 100%;
+    
+}
+
+#size-div {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+    text-align: center;
+}
+
+#percentage-div {
+    width: 100%;
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+    text-align: center;
+}
+
+#start {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1; 
+}
+
+#reset {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
 }
 
 /* Game */
 .game-area {
-
+    grid-row: 4 / span 1;
+    grid-column: 2 / span 1;
+    height: 100%;
+    border: 5px solid black;
 }
 
+#board {
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+#crown {
+    width: 90%;
+}
+
+.cell {
+    display: absolute;
+    background-color: limegreen;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+}
+
+#debug {
+    grid-row: 4 / span 1;
+    grid-column: 1/ span 1;
+    font-family: monospace;
+    height: 100%;
+    width: 100%;
+}
 
 /* Footer */
+footer {
+    grid-row: 5 / span 1;
+    grid-column: 2 / span 1;
+}
